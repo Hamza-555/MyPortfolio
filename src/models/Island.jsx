@@ -107,6 +107,8 @@ const Island = ({
         if (Math.abs(rotationSpeed.current) < 0.001) {
           rotationSpeed.current = 0;
         }
+
+        // Rotate the island based on the current speed        
   
         islandRef.current.rotation.y += rotationSpeed.current;
       } else {
