@@ -38,10 +38,10 @@ const Contact = () => {
     ).then(() => {
       setIsLoading(false);
       //Show Success Message
-      showAlert({show: true, text: 'Message Sent Successfully', type: 'success'})
+      showAlert({show: true, text: 'Thank-you for you message. 😀', type: 'success'})
       //Hide an alert
       setTimeout(() => {
-        hideAlert();
+        hideAlert(false);
         setCurrentAnimation('idle');
         setForm({name: '', email: '', message: ''});
       },[3000])
@@ -50,7 +50,7 @@ const Contact = () => {
       setCurrentAnimation('idle');
       console.log(error);
       //show error message
-      showAlert({show: true, text: 'Message Failed to sent', type: 'danger'})
+      showAlert({show: true, text: 'Message Failed. Please try again 😥', type: 'danger'})
       })
     }
 
@@ -67,6 +67,7 @@ const Contact = () => {
     <section className="relative flex lg:flex-row flex-col
     max-container">
       {alert.show && <Alert {...alert} />}
+      
       <div className="flex-1 min-w[50%] flex flex-col">
         <h1 className="head-text">Get In Touch!</h1>
 
